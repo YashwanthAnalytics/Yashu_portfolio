@@ -1,0 +1,31 @@
+Key Learnings & Takeaways
+
+• ADLS Gen2 for optimized storage Utilized Azure Data Lake Storage Gen2 with hierarchical namespace enabled, ensuring high performance and cost-efficiency for managing structured data lakes.
+
+• ADF for data ingestion Designed dynamic workflows in Azure Data Factory (ADF) using Linked Services, Copy Activity, and ForEach loops to automate data ingestion from the GitHub into the Bronze Layer of ADLS Gen2.
+
+• Unity Catalog for Data Governance and Security Implemented Databricks Unity Catalog & Metastore to enable fine-grained access control, and secure data management across Databricks workspaces.
+
+• Databricks AutoLoader for incremental loads Leveraged Databricks AutoLoader to enable incremental ingestion allowing efficient handling of dynamic datasets.
+
+• PySpark for data transformations Performed data cleanup, filtering, and aggregations using PySpark to incrementally load data into the Silver and Gold Layers, ensuring high-quality data transformation.
+
+• Databricks Workflows for Orchestration Developed Databricks Workflows using task dependencies, task values, & dynamic lookup arrays to automate transitions from the Bronze to Silver layers.
+
+• Delta Live Tables (DLT) for Data Validation Implemented Delta Live Tables (DLT) for automated data validation, schema enforcement, & quality checks, ensuring clean, structured data flows into the Gold Layer for analytics & reporting.
+
+Choosing the Right Tool
+
+Azure Data Factory (ADF) → Best for orchestrating &
+
+scheduling batch-based ETL across multiple services (SQL, ADLS, APIs, etc.).
+
+Databricks AutoLoader Ideal for real-time & incremental
+
+← ingestion from cloud storage (ADLS/S3) with minimal operational overhead.
+
+Delta Tables Optimized for ACID transactions, batch & streaming workloads, and high-performance querying with Databricks. ←
+
+Delta Live Tables (DLT) → Best for automated ETL,
+
+real-time transformations, data quality enforcement, and schema evolution with built-in lineage tracking.
